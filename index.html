@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Odyssey</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/42950478?v=4" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      --accent-color:#38bdf8;
+      --text-light:#f7f7f7;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Noto Sans JP','Inter',sans-serif;
+      color:var(--text-light);
+      background:var(--bg-gradient);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      overflow-x:hidden;
+    }
+    header{
+      width:100%;
+      padding:1.5rem 2rem;
+      display:flex;
+      justify-content:flex-end;
+    }
+    .toggle-btn{
+      background:transparent;
+      border:2px solid var(--accent-color);
+      color:var(--accent-color);
+      padding:0.5rem 1.1rem;
+      border-radius:30px;
+      font-size:1rem;
+      cursor:pointer;
+      transition:all .3s ease;
+      letter-spacing:0.05em;
+    }
+    .toggle-btn:hover{
+      background:var(--accent-color);
+      color:#0f2027;
+    }
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      text-align:center;
+    }
+    h1{
+      font-size:2.3rem;
+      margin-bottom:1.6rem;
+      font-weight:700;
+      letter-spacing:.06em;
+    }
+    p{
+      font-size:1.15rem;
+      line-height:1.85;
+      margin-bottom:1.25rem;
+    }
+    .jp,.en{
+      max-width:800px;
+      margin:0 auto;
+      transition:opacity .4s ease;
+    }
+    .en{display:none;opacity:0;}
+    .lang-en .jp{display:none;opacity:0;}
+    .lang-en .en{display:block;opacity:1;}
+    footer{
+      text-align:center;
+      padding:1rem;
+      font-size:.8rem;
+      opacity:.7;
+    }
+    @media (min-width:768px){
+      h1{font-size:3rem;}
+      p{font-size:1.25rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="toggle-btn" id="langToggle">EN / JP</button>
+  </header>
+  <main>
+    <div class="jp">
+      <h1>情報が紡ぐ未来へ</h1>
+      <p>時代を揺さぶる発明や，価値観を覆す発見も，</p>
+      <p>それを胸に刻む誰かの存在なくしては，静寂の中で眠り続けただろう．</p>
+      <p>語る者がいて，形にする者がいて，事実は初めて物語へと転じるのである．</p>
+      <p>やがて事実は時を超え，人と人を結び，さらなる進化を呼ぶ．</p>
+      <p>歴史とは，情報が紡ぐ連環である．</p>
+      <p>その糸口を私たちはどこに見出し，どう織り上げ，次代に手渡していけるのか．</p>
+      <p>私は技術と洞察を礎に，多様な領域で未来を形づくる挑戦を続けている．</p>
+      <p>必要な瞬間に，必要な力を．</p>
+      <p>次の物語を確かな姿で未来へ届けたい．</p>
+    </div>
+    <div class="en">
+      <h1>Toward a Future Woven by Information</h1>
+      <p>Even the inventions that shake an era or the discoveries that overturn our values</p>
+      <p>would have slumbered in silence, were it not for someone to engrave them in their heart.</p>
+      <p>It is only when there are those who speak, and those who give form, that facts become stories for the first time.</p>
+      <p>In time, these facts transcend generations, connecting people and sparking further evolution.</p>
+      <p>History is a chain woven by information.</p>
+      <p>Where do we find the threads, how do we weave them, and how do we pass them on to the next generation?</p>
+      <p>With technology and insight as my foundation, I continue to take on the challenge of shaping the future across diverse fields.</p>
+      <p>The right power, at the right moment.</p>
+      <p>I want to deliver the next story to the future, in a form both certain and true.</p>
+    </div>
+  </main>
+  <footer>&copy; <span id="year"></span> it3836. All Rights Reserved.</footer>
+
+  <script>
+    const btn=document.getElementById('langToggle');
+    btn.addEventListener('click',()=>{
+      document.body.classList.toggle('lang-en');
+    });
+    const yearEl=document.getElementById('year');
+    yearEl.textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
